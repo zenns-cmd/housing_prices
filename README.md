@@ -1,4 +1,12 @@
-This project implements Linear Regression from scratch using Gradient Descent to predict housing prices based on house size.
+This project implements linear regression with gradient descent from scratch to predict housing prices
+
+
+✨ Interactive Version (using streamlit):
+
+I've deployed an interactive version of the code at https://housingprices101.streamlit.app
+
+I uploaded both the original and streamlit version of the code on this repository.
+The files requirements.txt and psh.py are just extras used for deployment.
 
 
 ✅ Standard Algorithms:
@@ -17,7 +25,7 @@ Cost vs. Iterations: Tracks how the cost decreases over training iterations.
 Regression Line: Plots the best fit line against training data.
 
 
-💡 Interactive Prediction:
+💡 Prediction:
 
 Users can input a house size to get a predicted price.
 
