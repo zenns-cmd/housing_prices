@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st 
 
 def prediction(x, w, b):
+    
     f_wb = w * x + b
     return f_wb
 
@@ -75,15 +76,14 @@ tmp_fwb = prediction(x_train, w, b)
 ax2.scatter(x_train, y_train, marker='x', c='purple', label='Training data')
 ax2.plot(x_train, tmp_fwb, c='pink', label='Prediction')
 ax2.set_title("Housing Prices")
-ax2.set_ylabel('Price (in 1000s of dollars)')
-ax2.set_xlabel('Size (1000 sqft)')
+ax2.set_ylabel("Price (in 1000s of dollars)")
+ax2.set_xlabel("Size (1000 sqft)")
 ax2.legend()
 st.pyplot(fig2)
 
 
 st.subheader("🔮 Make a Prediction")
-size = st.number_input("🏡 Enter the size of the house (in 1000 sqft):", 
-                      min_value=0.1, max_value=10.0, value=1.5, step=0.1)
+size = st.number_input("🏡 Enter the size of the house (in 1000 sqft):", min_value=0.1, max_value=10.0, value=1.5, step=0.1)
 
 if size < min(x_train) or size > max(x_train):
     st.warning("⚠️ Warning: The input is outside the range of the training data. Predictions may be less accurate.")
@@ -101,8 +101,8 @@ ax3.scatter(size, prediction2, marker='o', s=100, c='red', label='Your house')
 ax3.scatter(x_train, y_train, marker='x', c='purple', label='Training data')
 ax3.plot(x_train, tmp_fwb, c='pink', label='Prediction')
 ax3.set_title(f"Predicted Price: ${prediction2 * 1000:,.2f}")
-ax3.set_ylabel('Price (in 1000s of dollars)')
-ax3.set_xlabel('Size (1000 sqft)')
+ax3.set_ylabel("Price (in 1000s of dollars)")
+ax3.set_xlabel("Size (1000 sqft)")
 ax3.legend()
 st.pyplot(fig3)
 
