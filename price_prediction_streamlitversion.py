@@ -3,6 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st 
 
+
+import time
+import streamlit as st
+
+with st.spinner("Waking up the app... Please wait 30 seconds"):
+    time.sleep(30) 
+
+
 def prediction(x, w, b):
     
     f_wb = w * x + b
