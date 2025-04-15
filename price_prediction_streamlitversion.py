@@ -1,15 +1,10 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-
-
-
 import streamlit as st 
-import time
 
-with st.spinner("Waking up the app... Please wait 30 seconds"):
-    time.sleep(30) 
-    
+
+st.set_page_config(page_title="House Price Predictor", page_icon="🏡")
 
 
 def prediction(x, w, b):
