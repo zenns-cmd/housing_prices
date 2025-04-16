@@ -98,9 +98,9 @@ if st.button("Train Model"):  #if button is pressed
     
     
 #remembers values between interactions on the app
-    st.session_state["w"] = w
-    st.session_state["b"] = b
-    st.session_state["costs"] = costs
+    st.session_state.w = w
+    st.session_state.b = b
+    st.session_state.costs = costs
     
 
 
@@ -113,24 +113,31 @@ if "w" in st.session_state and "b" in st.session_state:
         st.warning("⚠️ Warning: The input is outside the range of the training data. Predictions may be less accurate.")
 
 
-    prediction2 = prediction(size, round(st.session_state["w"]), round(st.session_state["b"]))
-    cost2 = cost(x_train, y_train, st.session_state["w"], st.session_state["b"])
+    prediction2 = prediction(size, round(st.session_state.w), round(st.session_state.b))
+    cost2 = cost(x_train, y_train, st.session_state.w, st.session_state.b)
 
 
     st.subheader("📊 Results")
-    st.write(f"Model parameters: w = {round(st.session_state["w"])}, b = {round(st.session_state["b"])}")
+    st.write(f"Model parameters: w = {round(st.session_state.w)}, b = {round(st.session_state.b)}")
     st.write(f"Cost (Mean Squared Error): {round(cost2)}")
 
 
     fig3, ax3 = plt.subplots()
     ax3.scatter(size, prediction2, marker="o", s=100, c="red", label="Your house")
     ax3.scatter(x_train, y_train, marker="x", c="purple", label="Training data")
-    ax3.plot(x_train, prediction(x_train, st.session_state["w"], st.session_state["b"]), c="pink", label="Prediction")
+    ax3.plot(x_train, prediction(x_train, st.session_state.w, st.session_state.b), c="pink", label="Prediction")
     ax3.set_title(f"Predicted Price: ${prediction2 * 1000:,.2f}")
     ax3.set_ylabel("Price (in 1000s of dollars)")
     ax3.set_xlabel("Size (1000 sqft)")
     ax3.legend()
     st.pyplot(fig3)
 
+    
 
     st.success(f"💲 Predicted price for a {size} (1000 sqft) house: ${prediction2 * 1000:,.2f}")
+
+
+
+
+
+
