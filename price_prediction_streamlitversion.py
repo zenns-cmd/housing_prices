@@ -97,7 +97,7 @@ if st.button("Train Model"):  #if button is pressed
     st.pyplot(fig2)
     
     
-#saves variables for each time the user interacts with the app
+#remembers values between interactions on the app
     st.session_state["w"] = w
     st.session_state["b"] = b
     st.session_state["costs"] = costs
