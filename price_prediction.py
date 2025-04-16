@@ -95,5 +95,8 @@ try:
     plt.show()
     print(f"\n💲 Predicted price for a {size} (1000 sqft) house: ${prediction2 * 1000:,.2f}")
     
+    
 except ValueError:
     print("❌ Invalid input, please enter a numeric value")
+
+
