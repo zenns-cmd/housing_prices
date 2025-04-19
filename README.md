@@ -1,4 +1,4 @@
-This project implements linear regression with gradient descent from scratch to predict housing prices
+This project predicts housing prices by applying gradient descent to a linear regression model built from scratch
 
 
 ✨ Interactive Version (using streamlit):
